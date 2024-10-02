@@ -1,0 +1,21 @@
+.container {
+    text-align: auto;
+    margin-top: 50px;
+}
+
+#inputElement {
+
+    font-size: 12px;
+    color: #3498db;
+}
+
+#headingElement {
+    font-size: 24px;
+    color: #3498db;
+    background-color: black;
+}
+
+.instructions {
+    font-size: 16px;
+    color: #FFC0CB;
+}

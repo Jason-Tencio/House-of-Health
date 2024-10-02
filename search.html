@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="project4.css">
+    <title>House of Health (HOH)</title>
+    <link rel="icon" href="https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29sb3IlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&w=1000&q=80" 
+    type="image/x-icon">
+</head>
+<body>
+    <nav class="main-navigation">
+        <ul>
+            <li><a href="search.html">Search A Receptionist's Account</a></li>
+            <li><a href="update.html">Update Patient Record</a></li>
+            <li><a href="scheduleAppointment.html">Schedule An Appointment</a></li>
+            <li><a href="cancelAppointment.html">Cancel Patient's Appointment</a></li>
+            <li><a href="scheduleProcedure.html">Schedule a Procedure</a></li>
+            <li><a href="cancelProcedure.html">Cancel Patient's Procedure</a></li>
+            <li><a href="create.html">Create A New Customer Account</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Search Receptionist's Account</h1>
+        <form action="search.php" method="post">
+            <button name="view_doctors">View Doctors</button>
+        </form>
+        <div>
+            <?php include 'search.php'; ?>
+        </div>
+    </div>
+</body>
+</html>

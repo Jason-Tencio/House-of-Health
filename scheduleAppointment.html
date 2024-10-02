@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedule An Appointment</title>
+    <link rel="icon" href="https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29sb3IlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&w=1000&q=80" 
+    type="image/x-icon">    
+    <link rel="stylesheet" type="text/css" href="project4.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="search.html">Search A Receptionist's Account</a></li>
+            <li><a href="update.html">Update Patient Record</a></li>
+            <li><a href="scheduleAppointment.html">Schedule An Appointment</a></li>
+            <li><a href="cancelAppointment.html">Cancel Patient's Appointment</a></li>
+            <li><a href="scheduleProcedure.html">Schedule a Procedure</a></li>
+            <li><a href="cancelProcedure.html">Cancel Patient's Procedure</a></li>
+            <li><a href="create.html">Create A New Customer Account</a></li>
+        </ul>
+    </nav>
+
+    <h1>Schedule Appointment</h1>
+
+    <form method="post" action="saa.php" onsubmit="return validateForm()">
+        <label for="patient_id">Patient ID:</label>
+        <input type="text" id="patient_id" name="patient_id" required>
+
+        <label for="patient_name">Patient Name:</label>
+        <input type="text" id="patient_name" name="patient_name" required>
+
+        <label for="appointment_date">Appointment Date:</label>
+        <input type="date" id="appointment_date" name="appointment_date" required>
+
+        <label for="appointment_type">Appointment Type:</label>
+        <input type="text" id="appointment_type" name="appointment_type" required>
+
+        <input type="submit" name="schedule_appointment" value="Schedule Appointment">
+    </form>
+
+    <script src="project4.js"></script>
+
+    <script>
+        function validateForm() {
+            const patientId = document.getElementById("patient_id").value;
+            const patientName = document.getElementById("patient_name").value;
+
+            if (patientId.trim() === "" || patientName.trim() === "") {
+                alert("Please enter valid Patient ID and Name.");
+                return false;
+            }
+
+            fetch("verify_patient.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: new URLSearchParams({
+                    verify_patient: true,
+                    patient_id: patientId,
+                    patient_name: patientName,
+                }),
+            })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`Server returned ${response.status} ${response.statusText}`);
+                }
+                return response.json();
+            })
+            .then((data) => {
+                if (data.exists) {
+                    alert("Patient verified. Proceed to schedule appointment.");
+                    return true;
+                } else {
+                    alert("Patient not found. Create an account before scheduling an appointment.");
+                    return false;
+                }
+            })
+            .catch((error) => {
+                console.error("Error verifying patient:", error);
+                alert("An error occurred while verifying patient. Please try again.");
+                return false;
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Patient's Record</title>
+    <link rel="icon" href="https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29sb3IlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&w=1000&q=80" 
+    type="image/x-icon">    
+    <link rel="stylesheet" type="text/css" href="project4.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="search.html">Search A Receptionist's Account</a></li>
+            <li><a href="update.html">Update Patient Record</a></li>
+            <li><a href="scheduleAppointment.html">Schedule An Appointment</a></li>
+            <li><a href="cancelAppointment.html">Cancel Patient's Appointment</a></li>
+            <li><a href="scheduleProcedure.html">Schedule a Procedure</a></li>
+            <li><a href="cancelProcedure.html">Cancel Patient's Procedure</a></li>
+            <li><a href="create.html">Create A New Customer Account</a></li>
+        </ul>
+    </nav>
+
+    <h1>Update Patient Record</h1>
+
+    <form id="update-patient-form" method="post" action="update.html">
+        <div class="group">
+            <label for="patient-id">Patient ID:</label>
+            <input type="text" id="patient-id" name="patient_id" required>
+        </div>
+        <div class="group">
+            <label for="shots">Shots:</label>
+            <input type="text" id="shots" name="shots">
+        </div>
+        <div class="group">
+            <label for="illness">Illness:</label>
+            <input type="text" id="illness" name="illness">
+        </div>
+
+        <button type="submit" name="update_patient">Update Record</button>
+    </form>
+    
+    <script>
+        var confirmUpdate = function () {
+            return confirm('Are you sure you want to update the patient\'s records?');
+        }
+
+        var displaySuccessMessage = function (data) {
+            alert('Patient records updated successfully.\n' + data);
+        }
+
+        var displayCancelMessage = function (data) {
+            alert('Update canceled.');
+        }
+
+        var displayErrorMessage = function (errorMessage) {
+            alert('Error updating records: ' + errorMessage);
+        }
+
+        var displayNoPatientMessage = function (data) {
+            alert('No patient on file for the given ID.');
+            window.location.href = 'update.html';
+        }
+
+        document.getElementById('update-patient-form').addEventListener('submit', function (event) {
+            if (!confirmUpdate()) {
+                event.preventDefault();
+                displayCancelMessage();
+            } else {
+                var shotsValue = document.getElementById('shots').value;
+                var illnessValue = document.getElementById('illness').value;
+
+                if (shotsValue && illnessValue) {
+                    displaySuccessMessage('Updated: Shots and Illness');
+                } else if (shotsValue) {
+                    displaySuccessMessage('Updated: Shots');
+                } else if (illnessValue) {
+                    displaySuccessMessage('Updated: Illness');
+                } else {
+                    displayErrorMessage('Invalid data entered.');
+                }
+            }
+        });
+    </script>
+
+    <canvas id="myChart" width="400" height="200"></canvas>
+    <script src="project4.js"></script>
+
+</body>
+</html>

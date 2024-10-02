@@ -1,0 +1,36 @@
+form {
+    max-width: 40%;
+    margin: auto;
+    padding: 20px;
+    border-color: pink;
+    border-style: solid;
+    border-width: thick;
+    text-align: center;
+    background-color: transparent;
+}
+label {
+    color: pink;
+    font-weight: bold;
+    text-align: left;
+}
+input {
+    width: 200px;
+}
+body {
+    background-image: url("https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29sb3IlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&w=1000&q=80");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+select {
+    width: 65%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+}

@@ -1,0 +1,188 @@
+body {
+    font-family: Times, serif;
+    font-size: 18px;
+    background-image: url("https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29sb3IlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&w=1000&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: auto;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    max-width: 800px;
+}
+
+h1 {
+    color: orangered;
+    font-size: 50px;
+    margin: 10px;
+    position: relative; 
+    top: 70px; 
+    margin-bottom: 50px; 
+}
+
+h2, h3 {
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-bottom: 70px; 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+button, .button, .reset-button { 
+    background-color: #ff9ded;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border-radius: 5px;
+}
+
+button:hover, .button:hover, .reset-button:hover {
+    background-color: #f40000;
+}
+
+button:active, .button:active, .reset-button:active {
+    background-color: #ca1616;
+}
+
+.reset-button {
+    background-color: #37b7bb;
+}
+
+.reset-button:hover {
+    background-color: #45d4d9;
+}
+
+.reset-button:active {
+    background-color: #35c5cd;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    width: 200px;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.box {
+    background-color: rgba(255, 255, 255, 0.438);
+    padding: 20px;
+    border: 1px solid #f589d4;
+    box-shadow: 0 0 20px rgba(253, 141, 201, 0.659);
+    margin: auto;
+    width: 80%;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+label {
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #f384cc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(14, 12, 12, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+li {
+    display: inline-block;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px; 
+    text-decoration: none;
+    font-size: 14px; 
+}
+
+li a:hover {
+    background-color: rgb(243, 183, 183);
+}
+
+.active {
+    background-color: #f593e6;
+}

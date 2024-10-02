@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schedule A Procedure</title>
+    <link rel="icon" href="https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29sb3IlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&w=1000&q=80" 
+    type="image/x-icon">    
+    <link rel="stylesheet" type="text/css" href="project4.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="search.html">Search A Receptionist's Account</a></li>
+            <li><a href="update.html">Update Patient Record</a></li>
+            <li><a href="scheduleAppointment.html">Schedule An Appointment</a></li>
+            <li><a href="cancelAppointment.html">Cancel Patient's Appointment</a></li>
+            <li><a href="scheduleProcedure.html">Schedule a Procedure</a></li>
+            <li><a href="cancelProcedure.html">Cancel Patient's Procedure</a></li>
+            <li><a href="create.html">Create A New Customer Account</a></li>
+        </ul>
+    </nav>
+
+    <h1>Schedule a Procedure</h1>
+
+    <form id="schedule-procedure-form" method="post" action="sap.php">
+        <!-- Add your procedure scheduling fields here -->
+        <div class="group">
+            <label for="patient-id">Patient ID:</label>
+            <input type="text" id="patient-id" name="patient_id" required>
+        </div>
+        <div class="group">
+            <label for="procedure-date">Procedure Date:</label>
+            <input type="date" id="procedure-date" name="procedure_date" required>
+        </div>
+        <div class="group">
+            <label for="procedure-type">Procedure Type:</label>
+            <input type="text" id="procedure-type" name="procedure_type" required>
+        </div>
+
+        <button type="submit" name="schedule_procedure">Schedule Procedure</button>
+    </form>
+
+    <script src="project4.js"></script>
+</body>
+</html>

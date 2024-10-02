@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create A New User</title>
+    <link rel="icon" href="https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29sb3IlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww&w=1000&q=80" 
+    type="image/x-icon">    
+    <link rel="stylesheet" type="text/css" href="project4.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="search.html">Search A Receptionist's Account</a></li>
+            <li><a href="update.html">Update Patient Record</a></li>
+            <li><a href="scheduleAppointment.html">Schedule An Appointment</a></li>
+            <li><a href="cancelAppointment.html">Cancel Patient's Appointment</a></li>
+            <li><a href="scheduleProcedure.html">Schedule a Procedure</a></li>
+            <li><a href="cancelProcedure.html">Cancel Patient's Procedure</a></li>
+            <li><a href="create.html">Create A New Customer Account</a></li>
+        </ul>
+    </nav>
+
+    <h1>Create A New Patient Account</h1>
+
+    <form id="create-account-form" action="canca.php" method="post" onsubmit="createAccount(); return false;">
+
+<div class="group">
+    <label for="patient-firstname">First Name:</label>
+    <input type="text" id="patient-firstname" name="patient-firstname" required>
+    <label> REQUIRED </label>
+</div>
+<div class="group">
+    <label for="patient-lastname">Last Name:</label>
+    <input type="text" id="patient-lastname" name="patient-lastname" required>
+    <label> REQUIRED </label>
+</div>
+<div class="group">
+    <label for="patient-idnumber">ID Number:</label>
+    <input type="text" id="patient-idnumber" name="patient-idnumber" required>
+    <label> REQUIRED </label>
+</div>
+
+
+        <button type="submit">Create Account</button>
+    </form>
+
+    <div id="patient-table-container">
+        <?php include 'canca.php'; ?>
+    </div>
+
+    <script src="project4.js"></script>
+</body>
+</html>

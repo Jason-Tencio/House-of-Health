@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>House of Health (HOH)</title>
+    <link rel="stylesheet" href="project2.css">
+
+</head>
+
+<body>
+    <div class="box">
+        <form id="login-form">
+            <h2>House of Health (HOH)</h2>
+            <h3>Receptionist Login</h3>
+            <div class="group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+                <label> REQUIRED </label>
+            </div>
+            <div class="group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+                <label> REQUIRED </label>
+            </div>
+            <div class="group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <i id="showPasswordButton" class="fa fa-eye" onclick="togglePasswordVisibility()"></i>
+                <label> REQUIRED </label>
+            </div>
+            <div class="group">
+                <label for="receptionistID">Receptionist ID #:</label>
+                <input type="text" id="ReceptionistID" name="receptionistID" required>
+                <label> REQUIRED </label>
+            </div>
+            <div class="group">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                <label> REQUIRED </label>
+            </div>
+            <div class="group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="group">
+                <input type="checkbox" id="emailConfirmation" name="emailConfirmation" onchange="toggleEmailRequired()">
+                <label for="emailConfirmation">Check the box to request Email Confirmation:</label>
+                <label>  </label>
+                <label id="requiredLabel" style="display: none; color: yellow;">REQUIRED</label>
+            </div>
+            <div class="group">
+                <label for="transaction">Select Transaction:</label>
+                <select id="transaction" name="transaction">
+                    <option value="search-account">Search Account</option>
+                    <option value="book-appointment">Book Appointment</option>
+                    <option value="cancel-appointment">Cancel Appointment</option>
+                    <option value="request-procedures">Request Procedures</option>
+                    <option value="cancel-procedures">Cancel Procedures</option>
+                    <option value="update-information">Update Patient Information</option>
+                    <option value="create-account">Create New Patient Account</option>
+                </select>
+            </div>
+            <div class="group">
+                <button type="submit">Login</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+<div id="searchResultTable" style="display: none;">
+    <h2>Search Results</h2>
+    <table id="resultTable">
+        <thead>
+            <tr>
+                <th>Receptionist Name</th>
+                <th>Receptionist ID</th>
+                <th>Receptionist Phone Number</th>
+                <th>Receptionist Email</th>
+                <th>Patient Name</th>
+                <th>Patient ID</th>
+                <th>Patient Date of Birth</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<script src="project2.js"></script>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var selectedTransaction = document.getElementById("transaction").value; 
+        var pageUrls = {
+            "search-account": "search.html",
+            "book-appointment": "scheduleAppointment.html",
+            "cancel-appointment": "cancelAppointment.html",
+            "request-procedures": "scheduleProcedure.html",
+            "cancel-procedures": "cancelProcedure.html",
+            "update-information": "update.html",
+            "create-account": "create.html"
+        };
+
+        if (pageUrls[selectedTransaction]) {
+            window.location.href = pageUrls[selectedTransaction];
+        }
+    });
+</script>
+</body>
+</html>
